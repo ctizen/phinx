@@ -994,7 +994,7 @@ class PostgresAdapter extends PdoAdapter implements AdapterInterface
 
         return sprintf(
             'COMMENT ON COLUMN %s.%s IS %s;',
-            $tableName,
+            $this->quoteTableName($tableName),
             $column->getName(),
             $comment
         );
